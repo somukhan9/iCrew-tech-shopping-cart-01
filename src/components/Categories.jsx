@@ -7,7 +7,6 @@ categories = Array.from(categories)
 function Categories({ setCategory }) {
   const handleCategoryFiltering = (event) => {
     const category = event.target.value
-    // console.log(category)
     setCategory(category)
   }
 

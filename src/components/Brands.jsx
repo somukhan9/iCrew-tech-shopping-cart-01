@@ -9,7 +9,6 @@ brands = Array.from(brands)
 function Brands({ setBrand }) {
   const handleBrandFiltering = (event) => {
     const brand = event.target.value
-    // console.log(brand)
     setBrand(brand)
   }
 

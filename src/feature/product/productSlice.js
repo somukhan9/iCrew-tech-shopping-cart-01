@@ -40,32 +40,21 @@ const productSlice = createSlice({
     filterProductByBrandAndCategory(state, action) {
       const { brand, category } = action.payload
 
-      // console.log(brand)
-      // console.log(category)
-
       if (brand === '' && category === '') {
-        // console.log('both empty')
-
         state.filteredProducts = state.products
       } else if (brand !== '' && category === '') {
-        // console.log('category empty but brand not empty')
-
         const filteredProducts = state.products.filter(
           (product) => product.brand.toLowerCase() === brand.toLowerCase()
         )
 
         state.filteredProducts = filteredProducts
       } else if (brand === '' && category !== '') {
-        // console.log('brand empty but category not empty')
-
         const filteredProducts = state.products.filter(
           (product) => product.category.toLowerCase() === category.toLowerCase()
         )
 
         state.filteredProducts = filteredProducts
       } else {
-        // console.log('both not empty')
-
         const filteredProducts = state.products.filter(
           (product) =>
             product.brand.toLowerCase() === brand.toLowerCase() &&
@@ -78,11 +67,7 @@ const productSlice = createSlice({
   },
 })
 
-export const {
-  fetchAllProducts,
-  filterProductByCategory,
-  filterProductByBrand,
-  filterProductByBrandAndCategory,
-} = productSlice.actions
+export const { fetchAllProducts, filterProductByBrandAndCategory } =
+  productSlice.actions
 
 export default productSlice.reducer

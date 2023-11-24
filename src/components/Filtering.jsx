@@ -11,11 +11,6 @@ function Filtering() {
   const [brand, setBrand] = React.useState('')
   const [category, setCategory] = React.useState('')
 
-  // const handleFilterProductsByBrandAndCategory = () => {
-  //   console.log(brand, category)
-  //   dispatch(filterProductByBrandAndCategory({ brand, category }))
-  // }
-
   React.useEffect(() => {
     dispatch(filterProductByBrandAndCategory({ brand, category }))
   }, [brand, category])
